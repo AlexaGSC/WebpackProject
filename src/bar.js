@@ -1,5 +1,7 @@
 export default function bar() {
 
-    console.log('Hello Again');
+    const text = document.createElement('h1');
+    text.innerHTML = 'Hello World';
+    document.body.appendChild(text);
 }
  
