@@ -16,12 +16,28 @@ entry: './src/index.js',
 				use: {
 					loader: 'babel-loader',
 					options: {
-						presets: ['@babel/presets-env']
+						presets: ['@babel/preset-env']
 					}
 				}
+			},
+			{
+			test: /\.css?$/,
+			use: [
+			'style-loader', /*Metemos el CSS en el DOM */
+			{
+				loader: 'postcss-loader',
+				options: {
+					ident: 'postcss',
+					plugins: [ require('postcss-import')]
+				}
 			}
+
 		]
-	}	
+	}
+		]
+	},
+	
+	
 
 };
 
